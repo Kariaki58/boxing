@@ -120,7 +120,7 @@
     }
 
     .verify{
-      margin:0;
+      margin-bottom:20px;
       font-size:13px;
       color:var(--muted);
       align-self:flex-start;
@@ -133,7 +133,8 @@
     }
 
     input[type="password"],
-    input[type="email"]{
+    input[type="email"],
+    input[type="text"]{
         width: 100%;
       margin-top:8px;
       padding:18px 12px;
@@ -145,7 +146,7 @@
       font-size:15px;
     }
 
-    input::placeholder{color:rgba(255,255,255,0.35)}
+    input::placeholder{color:rgb(160, 160, 160); font-size: medium;}
 
     .controls{
       display:flex;
@@ -158,12 +159,12 @@
     .show{
       display:flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       color:var(--muted);
       font-size:13px;
     }
 
-    .show input{transform:scale(1.02)}
+    .show input{ height: 20px; width: 20px; border: 1px white; background-color: white;}
 
     /* actions row */
     .actions{
@@ -232,6 +233,15 @@
       color:var(--muted);
       font-size:13px;
       padding:6px 4px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 30px;
+    }
+    .footer-links a {
+        text-decoration: none;
+        color: white;
     }
 
     /* responsive */
@@ -306,7 +316,6 @@
       <form class="right-pane" id="signin-form" autocomplete="on" novalidate>
         <p class="verify">To continue, first verify that it's you</p>
 
-        <label class="input-label" for="password">Enter your password</label>
         <input id="password" name="password" type="password" placeholder="Enter your password" required />
 
         <div class="controls">
@@ -317,7 +326,7 @@
         </div>
 
         <div class="actions">
-          <a class="forgot" href="#" id="forgot">Forgot password?</a>
+          <a class="forgot-password" href="#" id="forgot">Forgot password?</a>
           <button type="submit" class="next">Next</button>
         </div>
       </form>

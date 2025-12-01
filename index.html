@@ -3,1174 +3,1080 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Boxing Coaching - Transform Your Body Online</title>
+    <title>AI Website Masterclass | Build & Sell Websites in 1 Hour | No Coding</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles & Variables */
+        /* === DARK MODE THEME === */
         :root {
-            --dark-bg: #0a0a0a;
-            --darker-bg: #050505;
-            --card-bg: #1a1a1a;
-            --accent-red: #d90429;
-            --accent-gold: #ffd700;
-            --text-light: #f8f9fa;
-            --text-gray: #adb5bd;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --secondary: #0EA5E9;
+            --accent: #F59E0B;
+            --danger: #EF4444;
+            --success: #10B981;
+            --dark: #0F172A;
+            --darker: #020617;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --card-bg: #1E293B;
+            --card-border: #334155;
+            --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            --glow: 0 0 30px rgba(139, 92, 246, 0.3);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Segoe UI', sans-serif;
         }
-
+        
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3.8rem;
+            background: linear-gradient(to right, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 5px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        .highlight {
+            color: var(--accent);
+        }
+        
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+        
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--text-gray);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-red);
+        
+        /* === URGENCY BAR === */
+        .urgency-bar {
+            background: linear-gradient(90deg, #EF4444, #F59E0B, #EF4444);
+            background-size: 200% 100%;
+            animation: urgencyPulse 2s infinite linear;
             color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3);
         }
-
-        .btn-primary:hover {
-            background-color: #b10322;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(217, 4, 41, 0.3);
+        
+        @keyframes urgencyPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--accent-gold);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent-gold);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
-
-        .section-title {
+        
+        /* === HERO SECTION === */
+        .hero {
+            padding: 160px 0 100px;
+            background: var(--gradient-dark);
             position: relative;
-            margin-bottom: 3rem;
+            overflow: hidden;
         }
-
-        .section-title::after {
+        
+        .hero:before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-red);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-gold {
-            color: var(--accent-gold);
-        }
-
-        .text-red {
-            color: var(--accent-red);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            background-color: rgba(10, 10, 10, 0.9);
-            padding: 20px 0;
-            transition: var(--transition);
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
         }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
         }
-
-        .logo {
+        
+        .price-tag {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
             font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--text-light);
+            margin: 2rem 0;
+            box-shadow: var(--glow);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 22px 50px;
+            border-radius: 12px;
             text-decoration: none;
-            z-index: 1001;
-        }
-
-        .logo span {
-            color: var(--accent-red);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-red);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
+            font-weight: 800;
+            font-size: 1.3rem;
             border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1001;
-        }
-
-        /* Mobile Navigation */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: var(--darker-bg);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                z-index: 1000;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 20px 0;
-            }
-            
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-            
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.7);
-                z-index: 999;
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-            
-            .overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
         }
-
-        .hero-content {
-            max-width: 650px;
-            z-index: 2;
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
         }
-
-        .hero h1 {
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4);
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        /* === WHAT YOU GET === */
+        .benefits {
+            background: var(--dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .benefit-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
             margin-bottom: 1.5rem;
         }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+        
+        /* === COURSE MODULES === */
+        .modules {
+            background: var(--darker);
         }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 3rem;
+        
+        .module-timeline {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
         }
-
-        .email-form {
-            background-color: rgba(26, 26, 26, 0.8);
+        
+        .module-timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+        
+        .module-item {
+            background: var(--card-bg);
+            border-radius: 16px;
             padding: 30px;
-            border-radius: var(--border-radius);
-            max-width: 500px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            border: 1px solid #333;
-            background-color: var(--darker-bg);
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--accent-red);
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
+            margin-bottom: 30px;
+            position: relative;
+            margin-left: 80px;
+            border: 1px solid var(--card-border);
             transition: var(--transition);
         }
-
-        .form-submit:hover {
-            background-color: #b10322;
+        
+        .module-item:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
         }
-
-        /* Email Lead Magnet */
-        .lead-magnet {
-            background-color: var(--darker-bg);
-        }
-
-        .lead-content {
+        
+        .module-number {
+            position: absolute;
+            left: -80px;
+            top: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 50px;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: var(--glow);
         }
-
-        .lead-text {
-            flex: 1;
+        
+        /* === RESULTS SECTION === */
+        .results {
+            background: var(--dark);
         }
-
-        .lead-image {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .benefits-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .benefits-list i {
-            color: var(--accent-gold);
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* About Section */
-        .about {
-            background-color: var(--dark-bg);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .credentials {
-            display: flex;
-            gap: 20px;
-            margin: 2rem 0;
-        }
-
-        .credential-item {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            flex: 1;
-        }
-
-        .credential-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--accent-red);
-            margin-bottom: 10px;
-        }
-
-        /* Program Section */
-        .program {
-            background-color: var(--darker-bg);
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .program-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .program-icon {
-            font-size: 3rem;
-            color: var(--accent-red);
-            margin-bottom: 20px;
-        }
-
-        /* Why Online Section */
-        .why-online {
-            background-color: var(--dark-bg);
-        }
-
-        .why-grid {
+        
+        .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
+            margin-top: 60px;
         }
-
-        .why-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
+        
+        .result-card {
             text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
         }
-
-        .why-icon {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 20px;
+        
+        .result-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
         }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--darker-bg);
+        
+        /* === REVIEWS MATTERS SECTION === */
+        .reviews {
+            background: var(--darker);
         }
-
-        .testimonial-grid {
+        
+        .review-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            min-width: 200px;
+            border: 1px solid var(--card-border);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
-
-        .testimonial-card {
-            background-color: var(--card-bg);
+        
+        .review-card {
+            background: var(--card-bg);
+            border-radius: 16px;
             padding: 30px;
-            border-radius: var(--border-radius);
+            border: 1px solid var(--card-border);
+            position: relative;
         }
-
-        .testimonial-content {
-            margin-bottom: 20px;
-            font-style: italic;
+        
+        .review-card:before {
+            content: '"';
+            font-size: 6rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-weight: 900;
         }
-
-        .testimonial-author {
+        
+        .review-author {
             display: flex;
             align-items: center;
+            margin-top: 20px;
         }
-
-        .author-image {
+        
+        .author-avatar {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            overflow: hidden;
+            background: var(--gradient-primary);
             margin-right: 15px;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            margin: 0;
-            color: var(--accent-gold);
-        }
-
-        /* Pricing */
-        .pricing {
-            background-color: var(--dark-bg);
-        }
-
-        .pricing-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            border: 2px solid var(--accent-gold);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--accent-gold);
-            margin: 20px 0;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--text-gray);
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 30px 0;
-        }
-
-        .features-list li {
-            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
-
-        .features-list i {
-            color: var(--accent-red);
-            margin-right: 10px;
+        
+        /* === BONUSES === */
+        .bonuses {
+            background: var(--dark);
         }
-
-        /* FAQ */
+        
+        .bonus-highlight {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px dashed var(--primary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .bonus-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+        
+        .bonus-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .bonus-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        /* === PRICING SECTION === */
+        .pricing {
+            background: var(--gradient-dark);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+        }
+        
+        .pricing-card {
+            max-width: 700px;
+            margin: 60px auto;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.5rem;
+        }
+        
+        .price-new {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 20px 0;
+            background: linear-gradient(to right, #F59E0B, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+        
+        /* === FAQ === */
         .faq {
-            background-color: var(--darker-bg);
+            background: var(--darker);
         }
-
+        
         .faq-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 60px auto 0;
         }
-
+        
         .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
         }
-
+        
         .faq-question {
-            font-size: 1.2rem;
+            padding: 25px;
             font-weight: 700;
-            margin-bottom: 10px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .faq-answer {
-            color: var(--text-gray);
-            display: none;
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
-
-        .faq-item.active .faq-answer {
-            display: block;
+        
+        .faq-answer.open {
+            padding-bottom: 25px;
+            max-height: 300px;
         }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        /* Final CTA */
+        
+        /* === FINAL CTA === */
         .final-cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
+            background: var(--gradient-dark);
             text-align: center;
             padding: 100px 0;
+            position: relative;
         }
-
-        .final-cta h2 {
-            margin-bottom: 2rem;
+        
+        .final-cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0V100H1000V0C750,100 250,100 0,0Z" fill="%238B5CF6" opacity="0.1"/></svg>');
+            background-size: cover;
         }
-
-        .final-cta .email-form {
+        
+        .urgency-timer {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid var(--danger);
+            border-radius: 16px;
+            padding: 30px;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 40px auto;
         }
-
-        /* Footer */
-        footer {
-            background-color: var(--darker-bg);
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
+        
+        .timer-numbers {
+            font-size: 3rem;
             font-weight: 900;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 50px;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
+            color: var(--danger);
             margin-bottom: 10px;
         }
-
-        .footer-column ul li a {
-            color: var(--text-gray);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--accent-red);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--card-bg);
-            border-radius: 50%;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent-red);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
+        
+        /* === FOOTER === */
+        footer {
+            background: var(--darker);
+            padding: 50px 0 30px;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            color: var(--text-gray);
-            font-size: 0.9rem;
+            border-top: 1px solid var(--card-border);
         }
-
-        /* Responsive Styles */
+        
+        /* === RESPONSIVE === */
         @media (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            .lead-content,
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .footer-links {
-                flex-wrap: wrap;
-            }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.3rem; }
+            .module-item { margin-left: 70px; }
+            .module-number { left: -70px; }
         }
-
+        
         @media (max-width: 768px) {
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .credentials {
-                flex-direction: column;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 70px 0; }
+            .price-new { font-size: 3.5rem; }
+            .module-timeline:before { left: 25px; }
+            .module-item { margin-left: 60px; }
+            .module-number { left: -60px; width: 50px; height: 50px; }
+        }
+        
+        @media (max-width: 576px) {
+            h1 { font-size: 2.2rem; }
+            .cta-button { display: block; width: 100%; text-align: center; }
+            .review-stats { gap: 20px; }
+            .stat-box { min-width: 150px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">ELITE<span>BOXING</span></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#program">Program</a></li>
-                <li><a href="#testimonials">Results</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#cta" class="btn btn-primary">Get Started</a></li>
-            </ul>
-            <div class="overlay" id="overlay"></div>
-        </div>
-    </header>
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar" id="urgencyBar">
+        ⚡ PRICE INCREASES IN: <span id="timer">23:59:59</span> ⚡ ENROLL NOW BEFORE IT'S TOO LATE!
+    </div>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Transform Your Body with Elite Boxing Coaching — Anytime, Anywhere</h1>
-                <p>Train with a UAE-based pro boxing coach through personalized online programs and weekly accountability.</p>
-                <div class="hero-btns">
-                    <a href="#cta" class="btn btn-primary">Get Your Free Boxing Starter Pack</a>
-                    <a href="#lead-magnet" class="btn btn-secondary">Join the Email List</a>
-                </div>
-                <div class="email-form">
-                    <h3>Start Your Transformation Today</h3>
-                    <form id="hero-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <button type="submit" class="form-submit">Get My Free Starter Pack</button>
-                    </form>
-                </div>
+                <h1>Learn How to Build Websites With AI — In 1 Hour</h1>
+                <p class="hero-subtitle">No coding. No experience needed. Start earning ₦50k–₦200k per client. Go from zero to profitable web designer faster than you ever thought possible.</p>
+                
+                <div class="price-tag">ONLY ₦10,000 TODAY</div>
+                
+                <a href="#pricing" class="cta-button">
+                    <i class="fas fa-bolt"></i> ENROLL IN AI WEBSITE MASTERCLASS
+                </a>
+                
+                <p style="margin-top: 20px; color: var(--gray); font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt"></i> 30-Day Money-Back Guarantee • Lifetime Access
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Email Lead Magnet -->
-    <section class="lead-magnet" id="lead-magnet">
+    <!-- WHAT YOU GET -->
+    <section class="benefits">
         <div class="container">
-            <div class="lead-content">
-                <div class="lead-text">
-                    <h2 class="section-title">Get Your Free 7-Day Boxing Conditioning Program</h2>
-                    <p>Sign up for our email list and receive a complete 7-day boxing conditioning program designed specifically for busy professionals in the UAE.</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check-circle"></i> Early access to new training programs</li>
-                        <li><i class="fas fa-check-circle"></i> Exclusive fitness tips and techniques</li>
-                        <li><i class="fas fa-check-circle"></i> Discounts on premium coaching packages</li>
-                        <li><i class="fas fa-check-circle"></i> Weekly training advice delivered to your inbox</li>
-                    </ul>
-                    <a href="#cta" class="btn btn-primary">Get My Free Program</a>
+            <h2>Here's What You're Getting</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Complete AI Website Training</h3>
+                    <p>Step-by-step video tutorials showing you exactly how to build professional websites using AI tools.</p>
                 </div>
-                <div class="lead-image">
-                    <img src="https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boxing Training">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-tools"></i></div>
+                    <h3>AI Tool Mastery</h3>
+                    <p>Become proficient with multiple AI website builders and design tools used by professionals.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Client Acquisition System</h3>
+                    <p>Learn exactly how to find clients, pitch your services, and charge ₦50k-₦200k per website.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>Lifetime Updates</h3>
+                    <p>As AI tools evolve, you get free access to all future updates and new content.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- COURSE MODULES -->
+    <section class="modules">
         <div class="container">
-            <h2 class="section-title">Meet Your Coach</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="/images.jpg" alt="Professional Boxing Coach">
+            <h2>What's Inside The Masterclass</h2>
+            <div class="module-timeline">
+                <div class="module-item">
+                    <div class="module-number">01</div>
+                    <h3>AI Website Fundamentals</h3>
+                    <p>Understanding AI tools, setting up your workspace, and planning website projects.</p>
                 </div>
-                <div class="about-text">
-                    <h3>Professional Boxing Coach with 10+ Years Experience</h3>
-                    <p>With over a decade of experience training athletes and fitness enthusiasts, I've helped hundreds of clients transform their bodies and build confidence through boxing.</p>
-                    <p><strong class="text-red">Limited in-person coaching. Unlimited online coaching capacity.</strong></p>
-                    <p>My online coaching program allows me to train clients across the UAE and beyond, providing the same level of expertise and personal attention as in-person sessions.</p>
-                    <div class="credentials">
-                        <div class="credential-item">
-                            <div class="credential-number">500+</div>
-                            <div>Clients Trained</div>
-                        </div>
-                        <div class="credential-item">
-                            <div class="credential-number">10+</div>
-                            <div>Years Experience</div>
-                        </div>
-                        <div class="credential-item">
-                            <div class="credential-number">98%</div>
-                            <div>Satisfaction Rate</div>
-                        </div>
-                    </div>
+                <div class="module-item">
+                    <div class="module-number">02</div>
+                    <h3>Building Business Websites</h3>
+                    <p>Create professional business websites that attract and convert customers.</p>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">03</div>
+                    <h3>E-Commerce & Landing Pages</h3>
+                    <p>Build online stores and high-converting landing pages that generate sales.</p>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">04</div>
+                    <h3>Advanced AI Techniques</h3>
+                    <p>Master multiple AI tools to create unique, professional designs that stand out.</p>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">05</div>
+                    <h3>Client Delivery & Pricing</h3>
+                    <p>How to deliver projects professionally and charge premium rates (₦50k-₦200k).</p>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">06</div>
+                    <h3>Getting Your First Clients</h3>
+                    <p>Proven strategies to land your first paying clients within days.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Program Section -->
-    <section class="program" id="program">
+    <!-- RESULTS SECTION -->
+    <section class="results">
         <div class="container">
-            <h2 class="section-title">Online Coaching Program</h2>
-            <div class="program-grid">
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Weekly Check-ins</h3>
-                    <p>Personalized weekly progress reviews and adjustments to your training plan based on your results and feedback.</p>
+            <h2>Real Results You Can Expect</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">1 Hour</div>
+                    <h3>Build Time</h3>
+                    <p>Create professional websites in just 1 hour instead of weeks</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Custom Training Plan</h3>
-                    <p>Tailored workout routines designed specifically for your fitness level, goals, and available equipment.</p>
+                <div class="result-card">
+                    <div class="result-number">₦50k-200k</div>
+                    <h3>Per Client</h3>
+                    <p>Charge premium rates even as a beginner with no experience</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Video Technique Reviews</h3>
-                    <p>Submit videos of your workouts for detailed form analysis and personalized technique corrections.</p>
+                <div class="result-card">
+                    <div class="result-number">0</div>
+                    <h3>Coding Required</h3>
+                    <p>Zero technical skills needed. AI does all the heavy lifting</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
-                    <h3>Nutrition Guidance</h3>
-                    <p>Customized nutrition advice to fuel your workouts and accelerate your transformation results.</p>
-                </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3>24/7 WhatsApp Support</h3>
-                    <p>Direct access to your coach for questions, motivation, and adjustments whenever you need them.</p>
-                </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Progress Tracking</h3>
-                    <p>Comprehensive tracking of your performance, measurements, and achievements throughout your journey.</p>
+                <div class="result-card">
+                    <div class="result-number">7 Days</div>
+                    <h3>To First Client</h3>
+                    <p>Most students land their first paying client within a week</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Online Section -->
-    <section class="why-online">
+    <!-- REVIEWS MATTER -->
+    <section class="reviews">
         <div class="container">
-            <h2 class="section-title">Why Online Coaching Works for UAE Professionals</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="far fa-clock"></i>
-                    </div>
-                    <h3>Flexible Schedule</h3>
-                    <p>Train whenever it fits your busy schedule - early mornings, late nights, or during lunch breaks.</p>
+            <h2>What Our Students Say</h2>
+            
+            <div class="review-stats">
+                <div class="stat-box">
+                    <div class="stat-number">4.9/5</div>
+                    <p>Average Rating</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>More Affordable</h3>
-                    <p>Get premium coaching at a fraction of the cost of private in-person sessions.</p>
+                <div class="stat-box">
+                    <div class="stat-number">47+</div>
+                    <p>Students Enrolled</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Train Anywhere</h3>
-                    <p>No commute needed - train from home, hotel, or any space with enough room to move.</p>
+                <div class="stat-box">
+                    <div class="stat-number">₦17M+</div>
+                    <p>Earned By Students</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-user-cog"></i>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>"I was a complete beginner with zero tech skills. After taking this course, I landed my first ₦120k website client in just 5 days. The AI tools make everything so easy!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">C</div>
+                        <div>
+                            <h4>Chiamaka O.</h4>
+                            <p>Former Student, Now Freelancer</p>
+                        </div>
                     </div>
-                    <h3>Personalized Approach</h3>
-                    <p>Programs tailored specifically to your goals, fitness level, and available equipment.</p>
+                </div>
+                <div class="review-card">
+                    <p>"The client acquisition module alone is worth the price of the entire course. I went from zero to 3 clients in my first month, making over ₦400k. Life-changing!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">D</div>
+                        <div>
+                            <h4>David T.</h4>
+                            <p>University Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>"I've tried other web design courses before, but this AI approach is revolutionary. I can now build websites 10x faster and charge more because the results look professional."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">B</div>
+                        <div>
+                            <h4>Blessing K.</h4>
+                            <p>Small Business Owner</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <!-- BONUSES -->
+    <section class="bonuses">
         <div class="container">
-            <h2 class="section-title">Client Transformations</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "I lost 15kg in 3 months with the online boxing program. The weekly check-ins kept me accountable, and the WhatsApp support was a game-changer when I had questions."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Ahmed R.</h4>
-                            <p>Dubai, Lost 15kg</p>
-                        </div>
-                    </div>
+            <h2>Get These Exclusive Bonuses <span class="highlight">(Worth ₦35,000)</span></h2>
+            
+            <div class="bonus-highlight">
+                <h3><i class="fas fa-gift"></i> LIMITED TIME BONUSES</h3>
+                <p>Enroll today and get these exclusive bonuses free. They disappear when the timer hits zero!</p>
+            </div>
+            
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-icon"><i class="fas fa-comments-dollar"></i></div>
+                    <h3>Client Acquisition Script</h3>
+                    <p>Word-for-word script to land clients even if you're shy or new to freelancing.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "As a busy executive, I never had time for gym sessions. The online program let me train at 5 AM before work. I've never been in better shape!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Khalid M.</h4>
-                            <p>Abu Dhabi, Gained 5kg Muscle</p>
-                        </div>
-                    </div>
+                <div class="bonus-card">
+                    <div class="bonus-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Website Pricing Template</h3>
+                    <p>Know exactly what to charge for every type of website project (₦50k-₦200k).</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "The technique reviews completely transformed my boxing form. I went from complete beginner to confidently sparring in just 4 months."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
-                        </div>
-                        <div class="author-info">
-                            <h4>Omar S.</h4>
-                            <p>Sharjah, Boxing Skills</p>
-                        </div>
-                    </div>
+                <div class="bonus-card">
+                    <div class="bonus-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Portfolio Template</h3>
+                    <p>Professional portfolio to showcase your work and impress potential clients.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-icon"><i class="fas fa-users"></i></div>
+                    <h3>Exclusive WhatsApp Group</h3>
+                    <p>Get direct access to me and other students for support and networking.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- PRICING -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2 class="section-title">Online Coaching Packages</h2>
+            <h2>Enroll in AI Website Masterclass</h2>
+            
             <div class="pricing-card">
-                <h3>Online Coaching — Apply to Join</h3>
-                <div class="price">AED 899<span>/month</span></div>
-                <p>Premium online boxing coaching with personalized attention and 24/7 support</p>
-                <ul class="features-list">
-                    <li><i class="fas fa-check"></i> Custom Training Plan</li>
-                    <li><i class="fas fa-check"></i> Weekly Progress Check-ins</li>
-                    <li><i class="fas fa-check"></i> Video Technique Analysis</li>
-                    <li><i class="fas fa-check"></i> Nutrition Guidance</li>
-                    <li><i class="fas fa-check"></i> 24/7 WhatsApp Support</li>
-                    <li><i class="fas fa-check"></i> Progress Tracking Dashboard</li>
-                </ul>
-                <a href="#cta" class="btn btn-primary">Apply Now</a>
+                <h3>One-Time Payment</h3>
+                <p class="price-old">₦25,000</p>
+                <div class="price-new">₦10,000</div>
+                <p>Today Only - Price increases soon</p>
+                
+                <div class="guarantee-badge">
+                    <i class="fas fa-shield-alt"></i> 30-Day Money-Back Guarantee
+                </div>
+                
+                <button id="paystackBtn" class="cta-button" style="width: 100%; max-width: 400px; margin: 30px auto;">
+                    <i class="fas fa-lock"></i> SECURE CHECKOUT
+                </button>
+                
+                <p><i class="fas fa-check-circle"></i> Lifetime Access to Course</p>
+                <p><i class="fas fa-check-circle"></i> All Bonuses Included</p>
+                <p><i class="fas fa-check-circle"></i> Future Updates Free</p>
+                <p><i class="fas fa-check-circle"></i> Exclusive WhatsApp Group Access</p>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq" id="faq">
+    <section class="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        Do I need boxing equipment to start?
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" onclick="toggleFaq(1)">
+                        <span>Do I need any coding experience?</span>
+                        <i class="fas fa-plus"></i>
                     </div>
-                    <div class="faq-answer">
-                        No special equipment is required to begin. We can design effective boxing workouts using bodyweight exercises. As you progress, we may recommend basic equipment like gloves or resistance bands, but we'll work with what you have available.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How fast will I see results?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Most clients notice improved energy and endurance within 2-3 weeks. Visible body transformations typically begin appearing after 4-6 weeks of consistent training. Results vary based on your starting point, consistency, and adherence to the nutrition guidance.
+                    <div class="faq-answer" id="faq1">
+                        <p><strong>Absolutely not!</strong> This course is specifically designed for complete beginners with zero technical skills. We teach you how to use AI tools that do all the coding and technical work for you. All you need is a computer and internet connection.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        Can complete beginners join the program?
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" onclick="toggleFaq(2)">
+                        <span>How soon can I start making money?</span>
+                        <i class="fas fa-plus"></i>
                     </div>
-                    <div class="faq-answer">
-                        Absolutely! Our programs are designed for all fitness levels. Beginners receive foundational training focusing on proper technique and gradual progression. We adjust the intensity based on your current fitness level and experience.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do you provide meal plans?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, we provide customized nutrition guidance tailored to your goals (weight loss, muscle gain, or performance). This includes meal timing recommendations, portion guidance, and food choices - all adapted to UAE food availability and cultural preferences.
+                    <div class="faq-answer" id="faq2">
+                        <p>Most students land their first paying client within <strong>3-7 days</strong> of completing the course. The training is designed to get you earning quickly. Many students make back their investment from their very first client project.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        What if I travel frequently for work?
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" onclick="toggleFaq(3)">
+                        <span>What if I don't like the course?</span>
+                        <i class="fas fa-plus"></i>
                     </div>
-                    <div class="faq-answer">
-                        Our online program is perfect for frequent travelers. We design hotel-friendly workouts that require minimal or no equipment. Your training plan adjusts to your location and available facilities, ensuring you stay consistent regardless of where you are.
+                    <div class="faq-answer" id="faq3">
+                        <p>We offer a <strong>30-day money-back guarantee</strong>. If you're not completely satisfied with the course for any reason, simply email us within 30 days for a  refund, no questions asked.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(4)">
+                        <span>How do I access the WhatsApp group?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer" id="faq4">
+                        <p>Immediately after payment, you'll be redirected to a thank you page with a direct link to our exclusive students-only WhatsApp group. This is where you can ask questions, get support, and network with other students.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta" id="cta">
+    <!-- FINAL CTA -->
+    <section class="final-cta">
         <div class="container">
-            <h2>Ready to Start Your Boxing Transformation?</h2>
-            <p class="text-center">Join hundreds of professionals across the UAE who have transformed their bodies and fitness with our online boxing programs.</p>
-            <div class="email-form">
-                <form id="final-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Your Phone (Optional)">
-                    </div>
-                    <button type="submit" class="form-submit">Join the Training List</button>
-                </form>
+            <h2>Your Future as a Web Designer Starts Now</h2>
+            
+            <div class="urgency-timer">
+                <div class="timer-numbers" id="finalTimer">23:59:59</div>
+                <p>Price increases when timer hits zero!</p>
             </div>
+            
+            <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.2rem;">Stop waiting for the "perfect time." The perfect time is now. In 7 days, you could be earning ₦50k-₦200k per website project instead of wondering "what if."</p>
+            
+            <button id="finalPaystackBtn" class="cta-button" style="padding: 25px 60px; font-size: 1.5rem;">
+                <i class="fas fa-bolt"></i> YES! I WANT AI WEBSITE MASTERCLASS
+            </button>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">ELITE<span>BOXING</span></div>
-                    <p>Premium online boxing coaching for busy professionals in the UAE.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Programs</h4>
-                        <ul>
-                            <li><a href="#">Online Coaching</a></li>
-                            <li><a href="#">Beginners Program</a></li>
-                            <li><a href="#">Advanced Training</a></li>
-                            <li><a href="#">Nutrition Guidance</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Success Stories</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">WhatsApp Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2023 Elite Boxing Coaching. All rights reserved.
-            </div>
+            <p style="margin-bottom: 20px;">© 2023 AI Website Masterclass. All rights reserved.</p>
+            <p style="color: var(--gray); font-size: 0.9rem;">
+                This site is not a part of the Facebook website or Facebook Inc. This site is not part of the YouTube website or Google Inc.
+            </p>
         </div>
     </footer>
 
+    <!-- PAYSTACK PAYMENT MODAL -->
+    <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center;">
+        <div style="background: var(--card-bg); padding: 40px; border-radius: 16px; max-width: 500px; width: 90%; position: relative;">
+            <button onclick="closeModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
+            <h3 style="margin-bottom: 20px;">Complete Your Enrollment</h3>
+            <p style="margin-bottom: 30px;">You're just one step away from accessing the AI Website Masterclass!</p>
+            
+            <form id="paymentForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px;">Email Address</label>
+                    <input type="email" id="email-address" required style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--darker); color: white;">
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 8px;">Full Name</label>
+                    <input type="text" id="full-name" required style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--darker); color: white;">
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%;">
+                    <i class="fas fa-lock"></i> PAY ₦10,000 WITH PAYSTACK
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- THANK YOU PAGE (Hidden initially) -->
+    <div id="thankYouPage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient-dark); z-index: 10000; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+        <div style="max-width: 600px; padding: 40px; background: var(--card-bg); border-radius: 16px; border: 2px solid var(--primary);">
+            <div style="font-size: 5rem; color: var(--success); margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 style="color: var(--success);">Payment Successful!</h2>
+            <h3>Welcome to AI Website Masterclass</h3>
+            <p style="margin: 20px 0;">Your enrollment is confirmed! You now have lifetime access to the course.</p>
+            
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); border-radius: 12px; padding: 25px; margin: 30px 0;">
+                <h4><i class="fas fa-users"></i> Join Our Exclusive WhatsApp Group</h4>
+                <p style="margin: 15px 0;">Get direct access to me and connect with other students for support, networking, and updates.</p>
+                <a href="https://chat.whatsapp.com/H9OO0119LBIFHZEKCk6kkd?mode=hqrt2" target="_blank" class="cta-button" style="display: inline-block; background: #25D366; margin-top: 15px;">
+                    <i class="fab fa-whatsapp"></i> JOIN WHATSAPP GROUP NOW
+                </a>
+            </div>
+            
+            <p style="color: var(--gray); font-size: 0.9rem; margin-top: 30px;">Check your email for course access details. Welcome to the community!</p>
+        </div>
+    </div>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        const overlay = document.getElementById('overlay');
-        
-        function toggleMobileMenu() {
-            navLinks.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        // Urgency Timer
+        function updateTimer() {
+            const now = new Date();
+            const endTime = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours from now
+            
+            function update() {
+                const currentTime = new Date();
+                const timeLeft = endTime - currentTime;
+                
+                if (timeLeft <= 0) {
+                    document.getElementById('timer').textContent = '00:00:00';
+                    document.getElementById('finalTimer').textContent = '00:00:00';
+                    document.getElementById('urgencyBar').innerHTML = '⚡ PRICE HAS INCREASED! ⚡';
+                    return;
+                }
+                
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                const timerString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                document.getElementById('timer').textContent = timerString;
+                document.getElementById('finalTimer').textContent = timerString;
+            }
+            
+            update();
+            setInterval(update, 1000);
         }
         
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-        overlay.addEventListener('click', toggleMobileMenu);
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
+        // FAQ Toggle
+        function toggleFaq(faqNumber) {
+            const answer = document.getElementById(`faq${faqNumber}`);
+            const icon = answer.previousElementSibling.querySelector('i');
+            const isOpen = answer.classList.contains('open');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(faq => {
+                faq.classList.remove('open');
+                faq.previousElementSibling.querySelector('i').className = 'fas fa-plus';
             });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            
+            // Open the clicked FAQ if it wasn't already open
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.className = 'fas fa-minus';
             }
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentNode;
-                item.classList.toggle('active');
+        }
+        
+        // Payment Modal
+        function openModal() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+        
+        // Paystack Integration
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener('submit', payWithPaystack, false);
+        
+        function payWithPaystack(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email-address').value;
+            const name = document.getElementById('full-name').value;
+            const amount = 10000; // ₦10,000 in kobo
+            const publicKey = 'pk_live_31e2f5c683f81050f59271c30ef56bfbcbbe769c';
+            
+            let handler = PaystackPop.setup({
+                key: publicKey,
+                email: email,
+                amount: amount,
+                currency: 'NGN',
+                ref: 'AIWM-' + Math.floor((Math.random() * 1000000000) + 1),
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: "Full Name",
+                            variable_name: "full_name",
+                            value: name
+                        }
+                    ]
+                },
+                callback: function(response) {
+                    // Payment successful
+                    closeModal();
+                    document.getElementById('thankYouPage').style.display = 'flex';
+                    
+                    // In a real implementation, you would send the reference to your server
+                    console.log('Payment successful! Reference: ' + response.reference);
+                },
+                onClose: function() {
+                    alert('Payment window closed.');
+                }
             });
-        });
-
-        // Form submission
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your interest! We will contact you shortly with your free starter pack.');
-                form.reset();
+            
+            handler.openIframe();
+        }
+        
+        // Open modal when CTA buttons are clicked
+        document.getElementById('paystackBtn').addEventListener('click', openModal);
+        document.getElementById('finalPaystackBtn').addEventListener('click', openModal);
+        
+        // Open first FAQ by default
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimer();
+            toggleFaq(1);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
     </script>
